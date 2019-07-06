@@ -32,6 +32,7 @@
 				<div class="shape-container">
 					<!-- Dynamically add your circles here! -->
 					<!-- Example circle: <div class="p2-circle bg-blue"></div> -->
+          
 				</div>
 			</div>
 		</div>
@@ -39,7 +40,22 @@
 
 
 <script type="text/javascript">
-
+  var i = 0;
+  var stop = false;
+  $(".btn.btn-light.float-right").click(function(){
+      stop = true;
+    });
+  function add() {
+    $(".shape-container").append("<div class=\"p2-circle bg-blue\"></div>");
+    i++;
+    if (!stop) {
+            setTimeout(add,1000);
+    }
+   
+  }
+  add();
+  
+ 
 	// your solution here
 
 </script>
